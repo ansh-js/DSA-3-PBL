@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10241f" />
+  <title>Questionary — Question Bank Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">q<span>·</span></span><span>questionary</span></a>
+    <div class="workspace"><div class="workspace-icon">A</div><div><strong>Acme Academy</strong><small>Free workspace</small></div><span class="chevron">⌄</span></div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav>
+      <a class="nav-item active" href="#"><span class="nav-icon">▦</span> Question banks <span class="nav-count">4</span></a>
+      <a class="nav-item" href="#"><span class="nav-icon">◷</span> Recent activity</a>
+      <a class="nav-item" href="#"><span class="nav-icon">▤</span> Source library</a>
+    </nav>
+    <div class="nav-label second-label">MANAGE</div>
+    <nav>
+      <a class="nav-item" href="#"><span class="nav-icon">♙</span> Team members</a>
+      <a class="nav-item" href="#"><span class="nav-icon">⚙</span> Settings</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="usage"><div class="usage-head"><span>Monthly generations</span><span>8 / 20</span></div><div class="meter"><i></i></div><small>12 generations remaining</small><a href="#">View plans <span>↗</span></a></div><div class="profile"><div class="avatar">AS</div><div><strong>Ansh Singh</strong><small>Administrator</small></div><span class="dots">···</span></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="crumb">Workspace <span>/</span> Question banks <span>/</span> <b>New question bank</b></div><div class="top-actions"><button class="icon-btn" aria-label="Help">?</button><button class="icon-btn bell" aria-label="Notifications">♧<i></i></button><div class="top-avatar">AS</div></div></header>
+    <div class="page-wrap">
+      <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> QUESTION BANK STUDIO</div><h1>Build a question bank</h1><p>Turn your learning materials into a thoughtful set of questions in minutes.</p></div><div class="save-status"><span class="status-dot"></span> Draft saved</div></div>
+      <div class="stepper"><div class="step done"><span>✓</span><div><b>01</b> Add source</div></div><div class="step-line done-line"></div><div class="step current"><span>2</span><div><b>02</b> Configure</div></div><div class="step-line"></div><div class="step"><span>3</span><div><b>03</b> Review & export</div></div></div>
+      <div class="layout">
+        <section class="content-col">
+          <div class="card source-card"><div class="card-title-row"><div class="card-title"><span class="section-number">1</span><div><h2>Choose your source</h2><p>Paste learning content or upload a document to get started.</p></div></div><button class="text-button" id="sampleBtn">Load sample <span>↗</span></button></div>
+            <div class="source-tabs"><button class="tab active" data-tab="paste">✎ &nbsp;Paste text</button><button class="tab" data-tab="upload">↑ &nbsp;Upload a file</button></div>
+            <div class="paste-panel" id="pastePanel"><textarea id="sourceText" placeholder="Paste your lecture notes, textbook excerpt, or learning objectives here…"></textarea><div class="textarea-footer"><span id="wordCount">0 words</span><span>For best results, use at least 100 words</span></div></div>
+            <div class="upload-panel hidden" id="uploadPanel"><label class="dropzone" for="fileInput"><span class="upload-symbol">↑</span><strong>Drop a file here, or <u>browse</u></strong><small>PDF, DOCX, or TXT · up to 10 MB</small><input type="file" id="fileInput" accept=".txt,.md,.csv,.json,.pdf,.docx" /></label><p class="upload-note" id="uploadNote">Text files are read in your browser. PDF and DOCX upload is available in the full server-backed version.</p></div>
+          </div>
+          <div class="card configure-card"><div class="card-title-row"><div class="card-title"><span class="section-number">2</span><div><h2>Configure your questions</h2><p>Fine-tune the mix to suit your learners.</p></div></div></div>
+            <div class="form-grid"><label class="field-label">Question bank name<input id="bankName" value="Introduction to Cell Biology" /></label><label class="field-label">Subject area<select id="subject"><option>Biology</option><option>Computer Science</option><option>Business</option><option>History</option><option>Mathematics</option><option>General</option></select></label></div>
+            <div class="options-row"><div class="field-label">Number of questions<div class="segmented" id="countOptions"><button data-value="5">5</button><button class="selected" data-value="10">10</button><button data-value="15">15</button><button data-value="20">20</button><button class="custom-count" data-value="custom">Custom</button></div></div><div class="field-label">Difficulty level<div class="difficulty"><button class="diff active" data-diff="Easy"><span>◔</span> Easy</button><button class="diff" data-diff="Balanced"><span>◑</span> Balanced</button><button class="diff" data-diff="Challenging"><span>◕</span> Challenging</button></div></div></div>
+            <div class="types-header"><div class="field-label">Question types <small>Choose one or more</small></div><button class="select-all" id="selectAll">Select all</button></div><div class="type-grid"><label class="type-option checked"><input type="checkbox" value="Multiple choice" checked><span class="check"></span><span class="type-icon purple">☷</span><span><b>Multiple choice</b><small>Pick the best answer</small></span><span class="type-percent">50%</span></label><label class="type-option checked"><input type="checkbox" value="Short answer" checked><span class="check"></span><span class="type-icon blue">≡</span><span><b>Short answer</b><small>Concise written response</small></span><span class="type-percent">30%</span></label><label class="type-option"><input type="checkbox" value="True or false"><span class="check"></span><span class="type-icon orange">✓</span><span><b>True or false</b><small>Verify understanding</small></span><span class="type-percent">20%</span></label><label class="type-option"><input type="checkbox" value="Fill in the blank"><span class="check"></span><span class="type-icon green">＿</span><span><b>Fill in the blank</b><small>Recall key concepts</small></span><span class="type-percent">—</span></label></div>
+          </div>
+          <div class="generate-row"><div class="privacy-note"><span>✦</span> Your content stays private and secure.</div><button class="generate-btn" id="generateBtn"><span>✦</span> Generate question bank <span class="arrow">→</span></button></div>
+          <div class="result-card hidden" id="results"><div class="result-header"><div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR QUESTION BANK</div><h2 id="resultTitle">Generated questions</h2><p id="resultMeta"></p></div><div class="result-actions"><button class="outline-btn" id="copyBtn">▣ &nbsp;Copy</button><button class="outline-btn" id="exportBtn">↓ &nbsp;Export</button></div></div><div id="questionList"></div></div>
+        </section>
+        <aside class="right-col"><div class="preview-card"><div class="preview-head"><div><span class="preview-label">LIVE PREVIEW</span><h3>Your question mix</h3></div><span class="sparkle">✳</span></div><div class="donut-wrap"><div class="donut"><div class="donut-center"><b id="previewCount">10</b><small>questions</small></div></div><div class="donut-legend"><div><i class="legend-purple"></i><span>Multiple choice</span><b id="mcCount">5</b></div><div><i class="legend-blue"></i><span>Short answer</span><b id="saCount">3</b></div><div><i class="legend-orange"></i><span>True or false</span><b id="tfCount">2</b></div></div></div><div class="preview-divider"></div><div class="preview-meta"><span>Difficulty</span><b id="previewDifficulty">Easy</b></div><div class="preview-meta"><span>Estimated time</span><b id="previewTime">12–15 min</b></div><div class="preview-meta"><span>Answer key</span><b class="answer-ready"><i></i> Included</b></div></div>
+          <div class="tip-card"><div class="tip-icon">✦</div><div><b>A little context goes a long way</b><p>Include learning objectives and key terms for more relevant, accurate questions.</p><a href="#">See writing tips <span>→</span></a></div></div><div class="security-card"><span>♧</span><p><b>Made for educators</b><br>Built with privacy and learning outcomes in mind.</p></div></aside>
+      </div>
+      <footer><span>© 2025 Questionary</span><div><a href="#">Help center</a><a href="#">Privacy</a><a href="#">Terms</a></div></footer>
+    </div>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
